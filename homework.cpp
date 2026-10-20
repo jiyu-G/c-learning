@@ -1,12 +1,16 @@
 #include<iostream>
+#include<iomanip>
 using namespace std;
 int main()
 {
-    cout << " 静夜诗" << endl;
-    cout << "  李白" << endl;
-    cout << "床前明月光" << endl;
-    cout << "疑是地上霜" << endl;
-    cout << "举头望明月" << endl;
-    cout << "低头思故乡" << endl;
+    int a,b,sum;
+    cout << "请输入a与b的值" << endl;
+    cin >> a >> b;
+    sum = a+b;
+    cout << setw(10) << a << endl;
+    cout << setw(4) << "+" << setw(6) << b << endl;
+    cout << setw(10) << "________" << endl;
+    cout << setw(10) << sum << endl;
+
     return 0;
 }
