@@ -2,19 +2,31 @@
 using namespace std;
 int main()
 {
-	long int a = 0;
-    int b = 0;
-    char c = 'A';
-    bool d = true;
-    float e = 0.0;
-    double f = 0.0;
-    long double g = 0.0;
-    cout <<"long int的字节长度为"<< sizeof(a) <<"\t" <<"long int的位长为" << sizeof(a)*8 << endl;
-    cout <<"int的字节长度为"<< sizeof(b) <<"\t" <<"int的位长为" << sizeof(b)*8 << endl;
-    cout <<"char的字节长度为"<< sizeof(c) <<"\t" <<"char的位长为" << sizeof(c)*8 << endl;
-    cout <<"bool的字节长度为"<< sizeof(d) <<"\t" <<"bool的位长为" << sizeof(d)*8 << endl;
-    cout <<"float的字节长度为"<< sizeof(e) <<"\t" <<"float的位长为" << sizeof(e)*8 << endl;
-    cout <<"double的字节长度为"<< sizeof(f) <<"\t" <<"double的位长为" << sizeof(f)*8 << endl;
-    cout <<"long double的字节长度为"<< sizeof(g) <<"\t" <<"long double的位长为" << sizeof(g)*8 << endl;
+    int x, y, z;
+    cout << "请输入甲的糖果数x,乙的糖果数y,丙的糖果数z" << endl;
+    cin >> x >> y >> z;
+    int ox = x, oy = y, oz = z;
+
+    int give = x / 3;
+    x = give;
+    y = y + give;
+    z = z + give;
+
+    give = y / 3;
+    y = give;
+    x = x + give;
+    z = z + give;
+
+    give = z / 3;
+    z = give;
+    x = x + give;
+    y = y + give;
+
+    cout << "甲开始的糖果数为: " << ox << endl;
+    cout << "乙开始的糖果数为: " << oy << endl;
+    cout << "丙开始的糖果数为: " << oz << endl;
+    cout << "最后甲的糖果数为: " << x << endl;
+    cout << "最后乙的糖果数为: " << y << endl;
+    cout << "最后丙的糖果数为: " << z << endl;
     return 0;
 }
