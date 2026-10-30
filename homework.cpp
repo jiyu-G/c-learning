@@ -2,19 +2,17 @@
 using namespace std;
 int main()
 {
-    int a,b,c;
-    cout << "请输入三个整数" << endl;
-    cin >> a>> b>> c;
-    if(a>b)
+    int a = 0 ;
+    cout << "请输入一个正整数" << endl;
+    cin >> a ;
+    if (97 <= a%123 <= 122)
     {
-        if(a>c){cout << "max为" << a <<"  "<< "min为" << (b > c ? c :b ) <<endl;}
-        else{cout << "max为" << c <<"  " << "min为" << b <<endl;}
+        cout << (char)(a%123) << endl;
     }
-    else
-    {
-        if(b>c){cout << "max为" << b << "  " << "min为" << (a > c ? c : a) << endl;}
-     else{cout << "max为" << c <<"  " << "min为" << a << endl;}
-    }
+    else{
+        if(65 <= a%91 <=90){cout <<(char)(a%91) << endl; }
+        else{cout << "*" << endl;}
+        }
 
     return 0;
 }
