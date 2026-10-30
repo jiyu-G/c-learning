@@ -1,30 +1,22 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 int main()
 {
-    double t = 0 ,s = 0 ,BMI = 0;
-    cout << "请输入你的体重(kg)和身高(m)" << endl;
-    cin >> t >> s;
-    BMI = t / (s * s);
-    if(BMI < 18.5)
+    srand((unsigned)time(NULL));
+    int winningnumber =rand() % 5 +1 ;
+    int a = 0;
+    cout << "请输入一个1~5之间的数字" << endl;
+    cin >> a;
+    if (a == winningnumber)
     {
-        cout  << "BMI为" << BMI << "，体重偏瘦" << endl;
+        cout << "恭喜您中奖啦,商品现金券100元!! " << "中奖号码为" << winningnumber << endl;
     }
-    else if(18.5 <= BMI < 24)
+    else
     {
-        cout << "BMI为" << BMI << "，体重正常" << endl;
-    }
-    else if(24 <= BMI < 28)
-    {
-        cout << "BMI为" << BMI << "，体重偏胖" << endl;
-    }
-    else if(28 <= BMI < 40)
-    {
-        cout << "BMI为" << BMI << "，肥胖" << endl;
-    }
-    else if(40 <= BMI)
-    {
-        cout << "BMI为" << BMI << "，极重度肥胖" << endl;
+        cout << "非常遗憾,您没有中奖!欢迎下次再来" << "中奖号码为" << winningnumber << endl;
     }
     return 0;
+    
 }
