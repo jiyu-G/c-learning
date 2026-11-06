@@ -1,35 +1,28 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 int main()
 {
-    int zimu = 0;
-    int shuzi = 0;
-    int kongge = 0;
-    int qita = 0;
-    char ch;
-    cout << "请输入一行字符,以换行符结束" << endl;
-    while((ch = cin.get()) != '\n')
+    int a,b,weishu = 0,pinfanghe = 0,lixu = 0;
+    cout << "请输入一个任意整数" << endl;
+    cin >> a;
+    b = abs(a);
+    if(b == 0){weishu = 1;}
+    else
     {
-        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-        {
-            zimu++;
-        }
-        else if(ch >= '0' && ch <= '9')
-        {
-            shuzi++;
-        }
-        else if( ch == ' ')
-        {
-            kongge++;
-        }
-        else
-        {
-            qita++;
-        }
+    while(b > 0)
+     {
+        int number = b % 10;
+        pinfanghe += number * number;
+        weishu++;
+        lixu = lixu*10 + number;
+        b = b / 10;
+
+     }
     }
-    cout << "字母个数为:" << zimu << endl;
-    cout << "数字个数为:" << shuzi << endl;
-    cout << "空格个数为:" << kongge << endl;
-    cout << "其他字符个数为:" << qita << endl;
+    if(a <0){lixu = -lixu;}
+    cout << "该整数的位数为" << weishu << endl;
+    cout << "该整数的各位数字平方和为" << pinfanghe << endl;
+    cout << "该整数的逆序数为" << lixu << endl;
     return 0;
 }
