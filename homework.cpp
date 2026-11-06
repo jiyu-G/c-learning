@@ -1,18 +1,30 @@
 #include<iostream>
-#include<cmath>
+#include<iomanip>
 using namespace std;
 int main()
 {
-    int a ;
-    for (a = 100 ; a <= 999; a++)
+    int f[10];
+    double sum =0;
+    cout << "请输入10个数字" << endl;
+    for(int i = 0 ;i <= 9 ; i++){cin >> f[i];} 
+    for(int i = 0;i < 9 ;i++)
     {
-        bool answer = true;
-        for(int b =2 ;b <= sqrt(a) ;b++)
+        for(int j =0;j < 9-i;j++)
         {
-            if(a%b==0){answer = false; break;}
+            if(f[j] > f[j+1])
+            {
+                int temp = f[j+1];
+                f[j+1] = f[j];
+                f[j] = temp;
+            }
         }
-        if(answer){cout << a << endl;}
     }
+    for(int i=1 ;i < 9 ; i++)
+    {
+        sum = sum +f[i];
+    }
+    double p = sum/8;
+    cout << "最后得分为" << fixed << setprecision(3)<< p << endl; 
     return 0;
     
 }
