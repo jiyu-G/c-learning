@@ -2,24 +2,29 @@
 using namespace std;
 int main()
 {
-    int a =0,c = 0;
-    cout << "Enter a number: ";
-    cin >> a;
-    if(a==0)
+    int a[3][4];
+    for(int i=0;i<3;i++)
     {
-        cout << "转换为二进制为0" << endl;
+        for(int j=0;j<4;j++)
+        {
+            cout<<"Enter the number of a["<<i<<"]["<<j<<"] : ";
+            cin>>a[i][j];
+        }
     }
-    int b[32];
-    while(a != 0)
+    for(int i=0;i<3;i++)
     {
-        b[c] = a % 2;
-        a = a/2;
-        c++;
+        int max = a[i][0];
+        int maxlie =0;
+        for(int j =1;j<4;j++)
+        {
+            if(a[i][j] > max)
+            {
+                max = a[i][j];
+                maxlie = j;
+            }
+        }
+        cout << "第" << i+1 << "行的最大值为: " << max << "在第" << maxlie+1 << "列" << endl;
 
-    }
-    for(int i =c-1 ;i>=0;i--)
-    {
-        cout << b[i];
     }
     return 0;
 }
