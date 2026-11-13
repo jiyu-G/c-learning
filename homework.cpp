@@ -2,26 +2,24 @@
 using namespace std;
 int main()
 {
-    char a[100];
-    cin.getline(a, 100);
-    int length = 0;
-    while(a[length] != '\0')
-    {length++;}
-    for(int i = 0;i < length - 1;i++)
+    int a =0,c = 0;
+    cout << "Enter a number: ";
+    cin >> a;
+    if(a==0)
     {
-        for(int j = 0;j< length -i-1;j++)
-        {
-            if(a[j] > a[j+1])
-            {
-                int temp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = temp;
-            }
-        }
+        cout << "转换为二进制为0" << endl;
     }
-    for(int k = 0;k < length ;k++)
+    int b[32];
+    while(a != 0)
     {
-        cout << a[k] << endl;
+        b[c] = a % 2;
+        a = a/2;
+        c++;
+
+    }
+    for(int i =c-1 ;i>=0;i--)
+    {
+        cout << b[i];
     }
     return 0;
 }
