@@ -1,30 +1,29 @@
-#include<iostream>
+#include <iostream>
+#include <iomanip>
 using namespace std;
-int main()
+int main() 
 {
-    int a[3][4];
-    for(int i=0;i<3;i++)
+    int a[10][10];
+    for (int i = 0; i < 10; i++)
     {
-        for(int j=0;j<4;j++)
+        a[i][0] = 1; 
+        a[i][i] = 1;
+        for (int j = 1; j < i; j++) 
         {
-            cout<<"Enter the number of a["<<i<<"]["<<j<<"] : ";
-            cin>>a[i][j];
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
         }
     }
-    for(int i=0;i<3;i++)
+    for (int i = 0; i < 10; i++) 
     {
-        int max = a[i][0];
-        int maxlie =0;
-        for(int j =1;j<4;j++)
-        {
-            if(a[i][j] > max)
-            {
-                max = a[i][j];
-                maxlie = j;
-            }
+        for (int k = 0; k < (10 - i) * 3; k++) {
+            cout << " ";
         }
-        cout << "第" << i+1 << "行的最大值为: " << max << "在第" << maxlie+1 << "列" << endl;
+        for (int j = 0; j <= i; j++) 
+        {
+            cout << setw(6) << a[i][j]; 
+        }
+        cout << endl; 
+    }
 
-    }
     return 0;
 }
