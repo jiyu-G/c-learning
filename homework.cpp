@@ -1,28 +1,27 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 int main()
 {
-    int a,b,weishu = 0,pinfanghe = 0,lixu = 0;
-    cout << "请输入一个任意整数" << endl;
-    cin >> a;
-    b = abs(a);
-    if(b == 0){weishu = 1;}
-    else
+    char a[100];
+    cin.getline(a, 100);
+    int length = 0;
+    while(a[length] != '\0')
+    {length++;}
+    for(int i = 0;i < length - 1;i++)
     {
-    while(b > 0)
-     {
-        int number = b % 10;
-        pinfanghe += number * number;
-        weishu++;
-        lixu = lixu*10 + number;
-        b = b / 10;
-
-     }
+        for(int j = 0;j< length -i-1;j++)
+        {
+            if(a[j] > a[j+1])
+            {
+                int temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
     }
-    if(a <0){lixu = -lixu;}
-    cout << "该整数的位数为" << weishu << endl;
-    cout << "该整数的各位数字平方和为" << pinfanghe << endl;
-    cout << "该整数的逆序数为" << lixu << endl;
+    for(int k = 0;k < length ;k++)
+    {
+        cout << a[k] << endl;
+    }
     return 0;
 }
