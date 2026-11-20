@@ -1,43 +1,16 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void shuru(int a[], int n)
+void print(int n)
 {
-    for(int i=0;i<n;i++)
-    {
-        cin>>a[i];
-    }
+    if(n>=10){print(n/10);}
+    cout<<n%10<<" ";
 }
-void paixu(int a[], int n)
+int main()
 {
-    for(int i=0;i<n-1;i++)
-    {
-        for(int j=0;j<n-1-i;j++)
-        {
-            if(a[j+1]>a[j])
-            {
-                int t=a[j+1];
-                a[j+1]=a[j];
-                a[j]=t;
-            }
-        }
-    }
-}
-void shuchu(int a[], int n)
-{
-    for(int i=0;i<n;i++)
-    {
-        cout<<a[i]<<" ";
-    }
-}
-int main() 
-{
-    int a[1000];
-    cout << "请输入数组的长度：" << endl;
     int n;
+    cout << "请输入一个整数" << endl;
     cin>>n;
-    shuru(a, n);
-    paixu(a, n);
-    shuchu(a, n);
+    print(n);
+    cout<<endl;
     return 0;
-    
 }
