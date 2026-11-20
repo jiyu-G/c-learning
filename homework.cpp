@@ -1,25 +1,43 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
-void lixu(char a[])
+void shuru(int a[], int n)
 {
-    int n = strlen(a),b=0,m=0;
-    m=n-1;
-   while(b<m)
-   {
-    char temp=a[b];
-    a[b]=a[m];
-    a[m]=temp;
-    b++;
-    m--;
-   }
-    return;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+void paixu(int a[], int n)
+{
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=0;j<n-1-i;j++)
+        {
+            if(a[j+1]>a[j])
+            {
+                int t=a[j+1];
+                a[j+1]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+}
+void shuchu(int a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
 }
 int main() 
 {
-    char a[100];
-    cin.getline(a, 100);
-    lixu(a);
-    cout<<a<<endl;
+    int a[1000];
+    cout << "请输入数组的长度：" << endl;
+    int n;
+    cin>>n;
+    shuru(a, n);
+    paixu(a, n);
+    shuchu(a, n);
     return 0;
+    
 }
