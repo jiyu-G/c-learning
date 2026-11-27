@@ -1,14 +1,14 @@
 #include<iostream>
 using namespace std;
-double mianji(int r,double pai =3.14)
+int maxgongyue(int a,int b)
 {
-    return pai*r*r;
+    return b==0?a:maxgongyue(b,a%b);
 }
 int main()
 {
-    int r =0;
-    cout << "请输入圆的半径" << endl;
-    cin >> r;
-    cout << "圆的面积为：" << mianji(r) << endl;
+    int a,b;
+    cout << "请输入两个整数" << endl;
+    cin >> a >> b;
+    cout << "最大公约数为：" << maxgongyue(a,b) << endl;
     return 0;
 }
