@@ -1,14 +1,31 @@
 #include<iostream>
 using namespace std;
-int maxgongyue(int a,int b)
+double poly(double x,int n)
 {
-    return b==0?a:maxgongyue(b,a%b);
+    double y =0;
+    if(n==0)
+    {
+        y=1;
+        return y;
+    }
+    else if(n==1)
+    {
+        y=x;
+        return y;
+    }
+    else
+    {
+        y=((2*n-1)*x*poly(x,n-1)-(n-1)*poly(x,n-2))/n;
+        return y;
+    }
 }
 int main()
 {
-    int a,b;
-    cout << "请输入两个整数" << endl;
-    cin >> a >> b;
-    cout << "最大公约数为：" << maxgongyue(a,b) << endl;
+    double x=0;
+    int n =0;
+    cout << "请输入x和n的值" << endl;
+    cin >> x >> n;
+    cout << "函数poly的值为" << poly(x,n) << endl;
+
     return 0;
 }
