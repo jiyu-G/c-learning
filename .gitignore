@@ -1,0 +1,12 @@
+# 1. 忽略 VS Code 编辑器配置文件夹
+.vscode/
+
+# 2. 忽略各类 C/C++ 编译生成文件
+*.exe
+*.out
+*.o
+*.obj
+
+# 3. 忽略构建输出目录
+build/
+output/
